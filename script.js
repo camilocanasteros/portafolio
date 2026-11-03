@@ -184,3 +184,19 @@ if (stackSilk) {
   window.addEventListener('resize', () => { sizeSilk(); drawStackSilk(); });
   sizeSilk(); drawStackSilk(); loopStackSilk();
 }
+
+// Proyectos en celular: puntos que siguen el carrusel
+const mDots = document.getElementById('mDots');
+const stageEl = document.querySelector('.showcase .stage');
+if (mDots && stageEl) {
+  const slides = stageEl.querySelectorAll('.scene');
+  mDots.innerHTML = [...slides].map(() => '<span></span>').join('');
+  const dotsEls = mDots.querySelectorAll('span');
+  const updateDots = () => {
+    const w = slides[0].getBoundingClientRect().width + 14;
+    const i = Math.min(slides.length - 1, Math.round(stageEl.scrollLeft / w));
+    dotsEls.forEach((d, k) => d.classList.toggle('on', k === i));
+  };
+  stageEl.addEventListener('scroll', updateDots, { passive: true });
+  updateDots();
+}

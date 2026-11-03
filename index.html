@@ -46,7 +46,7 @@
 
         <div class="container hero-content">
           <div class="hero-text">
-          <p class="eyebrow hero-in"><span class="dot"></span> Disponible para roles full stack · Remoto / Colombia</p>
+          <p class="eyebrow hero-in"><span class="dot"></span> Disponible para roles full stack<span class="eyebrow-extra"> · Remoto / Colombia</span></p>
           <h1 class="hero-name" id="heroName" aria-label="Camilo Canasteros">
             <span class="line"><span>Camil<span class="zoom-o" id="zoomO">o</span></span></span>
             <span class="line"><span class="name-soft">Canasteros</span></span>
@@ -141,6 +141,11 @@ datos     → MySQL · Oracle · PL/SQL
     <section class="section projects-section" id="proyectos">
       <div class="container">
         <h2 class="sr-only">Proyectos</h2>
+        <!-- Encabezado solo para celular -->
+        <div class="m-proj-head">
+          <h2>Proyectos</h2>
+          <p>Desliza para ver más <span aria-hidden="true">→</span></p>
+        </div>
       </div>
 
       <!-- La vitrina se queda fija mientras haces scroll; cada tramo muestra un proyecto -->
@@ -235,6 +240,8 @@ datos     → MySQL · Oracle · PL/SQL
           <nav class="stage-nav" aria-label="Proyectos"><button type="button" class="dot-btn is-active" data-go="0" aria-label="Ir al proyecto 1"></button><button type="button" class="dot-btn" data-go="1" aria-label="Ir al proyecto 2"></button><button type="button" class="dot-btn" data-go="2" aria-label="Ir al proyecto 3"></button><button type="button" class="dot-btn" data-go="3" aria-label="Ir al proyecto 4"></button><button type="button" class="dot-btn" data-go="4" aria-label="Ir al proyecto 5"></button></nav>
         </div>
       </div>
+
+      <div class="m-dots" id="mDots" aria-hidden="true"></div>
 
       <div class="container more-work reveal">
         <p class="more-title">También he trabajado en</p>

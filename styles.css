@@ -1036,3 +1036,83 @@ body.intro-lock { overflow: hidden; }
 .exp-orb .career { max-width: 860px; }
 @media (max-width: 960px) { .exp-orb { padding: 80px 32px 64px; } .exp-orb::before, .exp-orb::after { inset: 0; } }
 @media (max-width: 720px) { .exp-orb { padding: 64px 24px 48px; } }
+
+/* =====================================================
+   AJUSTES DE CELULAR
+   ===================================================== */
+.m-proj-head, .m-dots { display: none; }
+
+@media (max-width: 720px) {
+  /* Hero: contenido arriba, cerca del header */
+  .hero { align-items: flex-start; padding-top: 92px; }
+
+  /* Sobre mí: polaroid centrada */
+  .poster-intro .polaroid { justify-self: center; margin: 8px auto 0; }
+}
+
+@media (max-width: 960px) {
+  /* Proyectos: encabezado y carrusel deslizable */
+  .m-proj-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 0; }
+  .m-proj-head h2 { font-size: 2rem; letter-spacing: -0.03em; }
+  .m-proj-head p { font: 13px var(--mono); color: var(--accent); white-space: nowrap; }
+
+  .showcase .stage {
+    flex-direction: row; gap: 14px; padding: 24px 24px 8px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 24px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .showcase .stage::-webkit-scrollbar { display: none; }
+  .showcase .stage .scene {
+    flex: 0 0 86%; scroll-snap-align: start;
+    flex-direction: row; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; gap: 8px;
+    padding: 12px 12px 20px; border-radius: 20px;
+    background: linear-gradient(160deg, rgba(28,49,80,.45), rgba(10,22,40,.6));
+    border: 1px solid rgba(140,196,255,.16);
+    --dw: 100%;
+  }
+  .showcase .stage .scene::before, .showcase .stage .scene-bg { display: none; }
+  .showcase .stage .scene .device { width: 100%; margin: 0 0 8px; order: 0; }
+  .showcase .stage .scene .device.phone { width: 150px; margin: 0 auto 8px; }
+
+  /* Puntos clave: pequeñas píldoras dentro de la tarjeta */
+  .showcase .stage .scene .float {
+    order: 1; width: auto; min-width: 0; padding: 5px 10px; border-radius: 999px;
+    flex-direction: row; align-items: center; gap: 6px;
+    font-size: 12px; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none;
+    background: rgba(140,196,255,.08);
+  }
+  .showcase .stage .scene .float > * { animation: none !important; }
+  .showcase .stage .scene .float strong { font-size: 12px; }
+  .showcase .stage .scene .float span { font-size: 12px; }
+  .showcase .stage .scene .float.ring > div:first-child { flex-direction: row; gap: 6px; }
+  .showcase .stage .scene .ring-wrap, .showcase .stage .scene .pill-dot { display: none; }
+
+  .showcase .stage .scene .scene-info { order: 2; width: 100%; margin-top: 10px; }
+  .showcase .stage .scene .scene-info h3 { font-size: 1.3rem; }
+  .showcase .stage .scene .scene-info > p:not(.scene-count) { font-size: 14px; }
+
+  .m-dots { display: flex; justify-content: center; gap: 8px; padding: 14px 0 0; }
+  .m-dots span { width: 7px; height: 7px; border-radius: 999px; background: rgba(140,196,255,.25); transition: width .3s, background .3s; }
+  .m-dots span.on { width: 22px; background: var(--accent); }
+}
+
+/* Hero en celular: distribuido en toda la pantalla
+   arriba: disponibilidad · centro: nombre y frase · abajo: botones */
+@media (max-width: 720px) {
+  .hero { align-items: stretch; padding: 84px 0 76px; }
+  .hero-content { display: flex; flex-direction: column; height: 100%; }
+  .hero-text { flex: 1; display: flex; flex-direction: column; }
+  .eyebrow { align-self: flex-start; }
+  .eyebrow-extra { display: none; }
+  .hero-name { font-size: 15vw; line-height: .9; margin: auto 0 18px; }
+  .hero-claim { font-size: 1.45rem; }
+  .hero-content .hero-sub { font-size: 16px; }
+  .hero-content .hero-actions { margin-top: auto; padding-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hero-content .hero-actions .btn { justify-content: center; }
+  .scroll-hint { bottom: 18px; }
+}
+@media (max-width: 720px) {
+  .hero { padding-bottom: 96px; }
+  .scroll-hint { bottom: 16px; gap: 6px; }
+  .scroll-hint span { height: 26px; }
+}
