@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camilo Canasteros · Desarrollador Full Stack</title>
+  <meta name="description" content="Portafolio de Juan Camilo Canasteros González, Ingeniero de Sistemas y desarrollador full stack. Angular, Java, PHP, MySQL y Oracle." />
+  <meta property="og:title" content="Camilo Canasteros · Desarrollador Full Stack" />
+  <meta property="og:description" content="Ingeniero de Sistemas que construye aplicaciones web completas: del modelo de datos a la interfaz." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Intro de tipografía cinética (idea 1) -->
+  <div class="intro" id="intro">
+    <div class="intro-word" id="introWord" aria-hidden="true"></div>
+    <button class="intro-skip" id="introSkip" type="button">Saltar intro</button>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <a href="#inicio" class="logo">Camilo Canasteros<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#stack">Stack</a>
+      <a href="#contacto" class="nav-cta">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO (motion) ============ -->
+    <!-- hero-wrap es más alto que la pantalla: ese recorrido de scroll es el zoom por la "o" de Camilo -->
+    <div class="hero-wrap" id="heroWrap">
+      <section class="hero" id="inicio">
+        <!-- Cintas de seda (idea 8) -->
+        <canvas class="hero-silk" id="silk" aria-hidden="true"></canvas>
+
+        <div class="container hero-content">
+          <div class="hero-text">
+          <p class="eyebrow hero-in"><span class="dot"></span> Disponible para roles full stack · Remoto / Colombia</p>
+          <h1 class="hero-name" id="heroName" aria-label="Camilo Canasteros">
+            <span class="line"><span>Camil<span class="zoom-o" id="zoomO">o</span></span></span>
+            <span class="line"><span class="name-soft">Canasteros</span></span>
+          </h1>
+          <p class="hero-claim hero-in">
+            Construyo apps de la <span class="accent">base de datos</span> a la interfaz.
+          </p>
+          <p class="hero-sub hero-in">
+            Ingeniero de Sistemas y desarrollador full stack. Angular en el frontend; PHP, Java y SQL en el backend.
+          </p>
+          <div class="hero-actions hero-in">
+            <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+            <a href="cv-camilo-canasteros.pdf" class="btn btn-ghost" download>Descargar CV</a>
+          </div>
+          </div>
+
+          <!-- Ventana de terminal -->
+          <div class="hero-terminal hero-in" aria-hidden="true">
+            <div class="terminal">
+              <div class="terminal-bar"><i></i><i></i><i></i><span>~/camilo</span></div>
+              <pre><code><span class="c-mute">$</span> whoami
+<span class="c-acc">camilo</span> — ingeniero de sistemas, full stack
+<span class="c-mute">$</span> cat stack.txt
+frontend  → Angular · TypeScript · HTML · CSS
+backend   → PHP · Java · Spring Boot · Node/Express
+datos     → MySQL · Oracle · PL/SQL
+<span class="c-mute">$</span> <span class="cursor">▍</span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-hint hero-in" aria-hidden="true"><span></span>scroll</div>
+        <!-- Velo que oscurece al final del zoom (idea 9) -->
+        <div class="hero-veil" id="heroVeil" aria-hidden="true"></div>
+      </section>
+    </div>
+
+    <!-- ============ SOBRE MÍ (póster editorial, estilo Solwy) ============ -->
+    <section class="section about-light about-poster" id="sobre-mi">
+      <div class="container poster-top">
+        <h2 class="sr-only">Sobre mí</h2>
+        <div class="poster-intro">
+        <!-- Polaroid con tu foto -->
+        <figure class="polaroid reveal">
+          <img src="img/camilo-polaroid.jpg" alt="Foto de Camilo Canasteros" loading="lazy" width="640" height="640" />
+          <figcaption>Camilo, 2026</figcaption>
+        </figure>
+        <div class="poster-text reveal">
+          <p>
+            Soy Ingeniero de Sistemas y actualmente curso la Especialización en Desarrollo de Software
+            en UNIMINUTO. Hoy soy Coordinador de Programación y Sistemas en Visión Latina Media Company,
+            donde desarrollo sus aplicaciones web, administro bases de datos y gestiono campañas digitales.
+          </p>
+          <p>
+            Vengo de un semillero del sector asegurador donde trabajé con Oracle, PL/SQL y procesos de negocio
+            de seguros, lo que me dejó una base sólida en datos y lógica de negocio. Desde ahí di el salto a
+            productos completos: sitios multilingües con renderizado en servidor, paneles de administración
+            seguros y apps móviles.
+          </p>
+        </div>
+        </div>
+      </div>
+
+      <!-- Mancha difuminada que cruza el póster -->
+      <div class="poster-smear" aria-hidden="true">
+        <svg viewBox="0 0 1200 360" preserveAspectRatio="none">
+          <defs>
+            <filter id="pSmear" x="-10%" y="-40%" width="120%" height="180%"><feGaussianBlur stdDeviation="22 9" /></filter>
+            <filter id="pHalo" x="-10%" y="-60%" width="120%" height="220%"><feGaussianBlur stdDeviation="40 22" /></filter>
+          </defs>
+          <path filter="url(#pHalo)" fill="#8cc4ff" opacity=".8"
+            d="M-40 170 C120 60 240 30 340 95 C400 135 420 60 520 40 C660 15 760 80 840 115 C940 160 1080 170 1240 190 L1240 250 C1040 244 840 236 660 226 C460 214 240 232 -40 270 Z" />
+          <g filter="url(#pSmear)">
+            <path fill="#0a1628"
+              d="M-40 180 C120 75 240 45 340 110 C400 150 420 75 520 55 C660 30 760 95 840 130 C940 175 1080 185 1240 205 L1240 238 C1040 232 840 226 660 216 C460 204 240 220 -40 255 Z" />
+            <path fill="#12223d" d="M-40 285 C300 258 760 252 1240 264 L1240 284 C800 274 320 280 -40 306 Z" />
+            <path fill="#1c3150" opacity=".9" d="M520 326 C760 318 1000 320 1240 326 L1240 336 C1000 334 760 336 520 340 Z" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="container poster-bottom">
+        <h2 class="poster-title reveal">De la base de datos<br />a la interfaz.</h2>
+        <ul class="poster-facts reveal">
+          <li><span>Ubicación</span>Colombia</li>
+          <li><span>Enfoque</span>Desarrollo full stack</li>
+          <li><span>Idiomas</span>Español nativo · Inglés C1 · Francés B2</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS (vitrina por escenas) ============ -->
+    <section class="section projects-section" id="proyectos">
+      <div class="container">
+        <h2 class="sr-only">Proyectos</h2>
+      </div>
+
+      <!-- La vitrina se queda fija mientras haces scroll; cada tramo muestra un proyecto -->
+      <div class="showcase" id="showcase" style="--count: 5">
+        <div class="stage">
+          <div class="stage-glow" aria-hidden="true"></div>
+        <!-- Visión Latina — Plataforma web — captura opcional: img/proyectos/vision-latina.jpg -->
+        <article class="scene is-active" data-scene="0">
+          <p class="scene-bg" aria-hidden="true">VISIÓN LATINA</p>
+          <div class="device browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>Visión Latina</span></div>
+            <div class="screen"><div class="skeleton" aria-hidden="true"><i class="sk-nav"></i><i class="sk-hero"></i><i class="sk-line"></i><i class="sk-line short"></i><div class="sk-cards"><i></i><i></i><i></i></div></div><img src="img/proyectos/vision-latina.jpg" alt="Captura de Visión Latina" loading="lazy" onerror="this.remove()" /></div>
+          </div>
+          <div class="float pill l1" style="--d:0.25s"><span class="pill-dot"></span>Angular · SSR</div>
+          <div class="float card ring r1" style="--d:0.37s"><div><strong>Idiomas</strong><span>ES · EN · PT</span></div><div class="ring-wrap"><svg class="ring-svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" class="ring-track"/><circle cx="32" cy="32" r="26" class="ring-fill" style="stroke-dasharray:48.5 6"/></svg><span class="ring-num">3</span></div></div>
+          <div class="float card r2" style="--d:0.49s"><strong>Panel admin</strong><span>PHP + MySQL · CSRF</span></div>
+          <div class="scene-info">
+            <p class="scene-count"><span>01</span> / 05 <span class="tag">Producción</span></p>
+            <h3>Visión Latina — Plataforma web</h3>
+            <p>Sitio Angular con SSR en español, inglés y portugués, sistema de noticias con lectura tipo periódico y un panel de administración propio en PHP + MySQL.</p>
+            <ul class="chips"><li>Angular</li><li>SSR</li><li>ngx-translate</li><li>PHP</li><li>MySQL</li></ul>
+              <a href="https://visionlatina.info" target="_blank" rel="noopener" class="scene-link">Ver sitio ↗</a>
+          </div>
+        </article>
+        <!-- Presbicia Latam — Congreso virtual — captura opcional: img/proyectos/presbicia-latam.jpg -->
+        <article class="scene" data-scene="1">
+          <p class="scene-bg" aria-hidden="true">PRESBICIA</p>
+          <div class="device browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>Presbicia Latam</span></div>
+            <div class="screen"><div class="skeleton" aria-hidden="true"><i class="sk-nav"></i><i class="sk-hero"></i><i class="sk-line"></i><i class="sk-line short"></i><div class="sk-cards"><i></i><i></i><i></i></div></div><img src="img/proyectos/presbicia-latam.jpg" alt="Captura de Presbicia Latam" loading="lazy" onerror="this.remove()" /></div>
+          </div>
+          <div class="float pill l1" style="--d:0.25s"><span class="pill-dot"></span>Congreso virtual</div>
+          <div class="float card r1" style="--d:0.37s"><strong>Registro</strong><span>Correo + evento .ics</span></div>
+          <div class="float pill r2" style="--d:0.49s"><span class="pill-dot"></span>Cuenta regresiva</div>
+          <div class="scene-info">
+            <p class="scene-count"><span>02</span> / 05 <span class="tag">Producción</span></p>
+            <h3>Presbicia Latam — Congreso virtual</h3>
+            <p>Landing multilingüe con cuenta regresiva, tarjetas por zona horaria, agenda tipo cuaderno que pasa sus páginas y evento descargable para el calendario.</p>
+            <ul class="chips"><li>Angular</li><li>SSR</li><li>i18n</li><li>Animaciones</li></ul>
+              <a href="https://presbicialatam.com" target="_blank" rel="noopener" class="scene-link">Ver sitio ↗</a>
+          </div>
+        </article>
+        <!-- Valenti Studio — Landing page — captura opcional: img/proyectos/valenti-studio.jpg -->
+        <article class="scene" data-scene="2">
+          <p class="scene-bg" aria-hidden="true">VALENTI</p>
+          <div class="device browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>Valenti Studio</span></div>
+            <div class="screen"><div class="skeleton" aria-hidden="true"><i class="sk-nav"></i><i class="sk-hero"></i><i class="sk-line"></i><i class="sk-line short"></i><div class="sk-cards"><i></i><i></i><i></i></div></div><img src="img/proyectos/valenti-studio.jpg" alt="Captura de Valenti Studio" loading="lazy" onerror="this.remove()" /></div>
+          </div>
+          <div class="float pill l1" style="--d:0.25s"><span class="pill-dot"></span>Freelance</div>
+          <div class="float card r1" style="--d:0.37s"><strong>Stack</strong><span>HTML · CSS · JS</span></div>
+          <div class="float pill r2" style="--d:0.49s"><span class="pill-dot"></span>Netlify</div>
+          <div class="scene-info">
+            <p class="scene-count"><span>03</span> / 05 <span class="tag">Freelance</span></p>
+            <h3>Valenti Studio — Landing page</h3>
+            <p>Sitio para un estudio creativo construido desde cero, sin frameworks, optimizado para móvil y publicado en Netlify.</p>
+            <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Netlify</li></ul>
+              <a href="https://rainbow-kataifi-0904a7.netlify.app/" target="_blank" rel="noopener" class="scene-link">Ver sitio ↗</a>
+          </div>
+        </article>
+        <!-- Láser House — Control de asistencia — captura opcional: img/proyectos/laser-house.jpg -->
+        <article class="scene" data-scene="3">
+          <p class="scene-bg" aria-hidden="true">LÁSER HOUSE</p>
+          <div class="device phone">
+            <div class="screen"><div class="skeleton" aria-hidden="true"><i class="sk-nav"></i><i class="sk-hero"></i><i class="sk-line"></i><i class="sk-line short"></i><div class="sk-cards"><i></i><i></i><i></i></div></div><img src="img/proyectos/laser-house.jpg" alt="Captura de Láser House — Control de asistencia" loading="lazy" onerror="this.remove()" /></div>
+          </div>
+          <div class="float pill l1" style="--d:0.25s"><span class="pill-dot"></span>Check-in con QR</div>
+          <div class="float card ring r1" style="--d:0.37s"><div><strong>Sedes</strong><span>Bogotá · Cajicá · Pereira</span></div><div class="ring-wrap"><svg class="ring-svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" class="ring-track"/><circle cx="32" cy="32" r="26" class="ring-fill" style="stroke-dasharray:48.5 6"/></svg><span class="ring-num">3</span></div></div>
+          <div class="float card l2" style="--d:0.49s"><strong>Proyecto de investigación</strong><span>UNIMINUTO</span></div>
+          <div class="scene-info">
+            <p class="scene-count"><span>04</span> / 05 <span class="tag tag-wip">En desarrollo</span></p>
+            <h3>Láser House — Control de asistencia</h3>
+            <p>App móvil para un centro de depilación: los empleados registran llegada y salida escaneando un QR y los administradores ven horarios y turnos.</p>
+            <ul class="chips"><li>Android</li><li>QR</li><li>Base de datos</li></ul>
+          </div>
+        </article>
+        <!-- Plataforma de agendamiento — captura opcional: img/proyectos/agendamiento.jpg -->
+        <article class="scene" data-scene="4">
+          <p class="scene-bg" aria-hidden="true">AGENDA</p>
+          <div class="device phone">
+            <div class="screen"><div class="skeleton" aria-hidden="true"><i class="sk-nav"></i><i class="sk-hero"></i><i class="sk-line"></i><i class="sk-line short"></i><div class="sk-cards"><i></i><i></i><i></i></div></div><img src="img/proyectos/agendamiento.jpg" alt="Captura de Plataforma de agendamiento" loading="lazy" onerror="this.remove()" /></div>
+          </div>
+          <div class="float pill l1" style="--d:0.25s"><span class="pill-dot"></span>Reservas en línea</div>
+          <div class="float card r1" style="--d:0.37s"><strong>Recordatorios</strong><span>Automáticos</span></div>
+          <div class="scene-info">
+            <p class="scene-count"><span>05</span> / 05 <span class="tag tag-wip">En desarrollo</span></p>
+            <h3>Plataforma de agendamiento</h3>
+            <p>Sistema de reserva de citas para una empresa cliente: disponibilidad en tiempo real, agenda por profesional y recordatorios.</p>
+            <ul class="chips"><li>Full stack</li><li>Requisitos</li><li>UX</li></ul>
+          </div>
+        </article>
+          <nav class="stage-nav" aria-label="Proyectos"><button type="button" class="dot-btn is-active" data-go="0" aria-label="Ir al proyecto 1"></button><button type="button" class="dot-btn" data-go="1" aria-label="Ir al proyecto 2"></button><button type="button" class="dot-btn" data-go="2" aria-label="Ir al proyecto 3"></button><button type="button" class="dot-btn" data-go="3" aria-label="Ir al proyecto 4"></button><button type="button" class="dot-btn" data-go="4" aria-label="Ir al proyecto 5"></button></nav>
+        </div>
+      </div>
+
+      <div class="container more-work reveal">
+        <p class="more-title">También he trabajado en</p>
+        <div class="more-item">
+          <div>
+            <h3>APIs REST en Java y .NET <span class="tag tag-acad">Académico</span></h3>
+            <p>Corrección de errores sobre <em>spring-petclinic-rest</em> (validación de veterinarios duplicados, 156 pruebas en verde) y depuración de una Web API en .NET con pruebas xUnit y Swagger.</p>
+          </div>
+          <ul class="chips"><li>Java</li><li>Spring Boot</li><li>.NET</li><li>xUnit</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCIA Y FORMACIÓN ============ -->
+    <section class="section exp-light" id="experiencia">
+      <div class="container">
+        <h2 class="sr-only">Experiencia y formación</h2>
+
+        <!-- Forma oscura con halo azul difuminado (estética de la referencia) -->
+        <div class="exp-orb">
+          <svg class="exp-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="12" r="7"/><circle cx="49.3" cy="22" r="7"/><circle cx="49.3" cy="42" r="7"/>
+            <circle cx="32" cy="52" r="7"/><circle cx="14.7" cy="42" r="7"/><circle cx="14.7" cy="22" r="7"/>
+          </svg>
+
+        <div class="career">
+          <!-- Experiencia laboral -->
+          <div class="career-col">
+            <h2 class="career-title reveal">Experiencia laboral</h2>
+            <ol class="timeline">
+              <li class="reveal">
+                <div class="tl-date">Ago 2026 — Actual</div>
+                <div class="tl-body">
+                  <h3>Coordinador de Programación y Sistemas</h3>
+                  <p class="tl-org">Visión Latina Media Company S.A.S.</p>
+                  <p>
+                    Desarrollo web (Angular + PHP/MySQL), administración de bases de datos, campañas de email
+                    marketing, programación de publicaciones en redes y producción de transmisiones en vivo.
+                  </p>
+                </div>
+              </li>
+              <li class="reveal">
+                <div class="tl-date">Ago 2024 — Jun 2026</div>
+                <div class="tl-body">
+                  <h3>Agente bilingüe de servicio al cliente</h3>
+                  <p class="tl-org">Teleperformance Colombia S.A.S.</p>
+                  <p>Atención y soporte a clientes en español e inglés.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Formación académica -->
+          <div class="career-col">
+            <h2 class="career-title reveal">Formación</h2>
+            <ol class="timeline">
+              <li class="reveal">
+                <div class="tl-date">En curso</div>
+                <div class="tl-body">
+                  <h3>Especialización en Desarrollo de Software</h3>
+                  <p class="tl-org">UNIMINUTO</p>
+                  <p>Arquitectura de software, calidad (ISO/IEC 25010), APIs REST y pruebas.</p>
+                </div>
+              </li>
+              <li class="reveal">
+                <div class="tl-date">Pregrado</div>
+                <div class="tl-body">
+                  <h3>Ingeniería de Sistemas</h3>
+                  <p class="tl-org">Universidad de Cundinamarca · Sede Chía</p>
+                </div>
+              </li>
+              <li class="reveal">
+                <div class="tl-date">Investigación</div>
+                <div class="tl-body">
+                  <h3>Semillero del sector asegurador</h3>
+                  <p class="tl-org">Inforcol</p>
+                  <p>Oracle, PL/SQL, TronWeb y Java sobre pólizas, primas y siniestros; procesos de negocio de seguros.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section stack-section" id="stack">
+      <!-- Foto de fondo, editada con la paleta de la página -->
+      <img class="stack-photo" src="img/camilo-stack.jpg" alt="Retrato de Camilo Canasteros" loading="lazy" />
+      <!-- Cintas de seda tenues (como las del hero, más suaves) -->
+      <canvas class="stack-silk" id="stackSilk" aria-hidden="true"></canvas>
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Stack</h2>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-col reveal">
+            <h3>Frontend</h3>
+            <ul><li>Angular</li><li>TypeScript</li><li>HTML5 / CSS3</li><li>JavaScript</li><li>i18n · SSR</li></ul>
+          </div>
+          <div class="stack-col reveal">
+            <h3>Backend</h3>
+            <ul><li>PHP</li><li>Java · Spring Boot</li><li>Python</li><li>Node · Express</li><li>APIs REST</li></ul>
+          </div>
+          <div class="stack-col reveal">
+            <h3>Datos</h3>
+            <ul><li>MySQL</li><li>Oracle</li><li>PL/SQL</li><li>Power BI</li><li>Excel avanzado</li></ul>
+          </div>
+          <div class="stack-col reveal">
+            <h3>Herramientas</h3>
+            <ul><li>Git</li><li>Android Studio</li><li>Hostinger · Netlify · Vercel</li><li>VS Code</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section contact" id="contacto">
+      <div class="container contact-inner reveal">
+        <h2>¿Construimos algo juntos?</h2>
+        <p>Estoy abierto a roles full stack y proyectos freelance. Escríbeme y te respondo pronto.</p>
+        <a href="mailto:ccanasteros@gmail.com" class="contact-mail">ccanasteros@gmail.com</a>
+        <div class="socials">
+          <a href="https://github.com/camilocanasteros" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/juan-camilo-canasteros-gonz%C3%A1lez-74b513359" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <button class="copy-btn" id="copyBtn" data-email="ccanasteros@gmail.com">Copiar correo</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Juan Camilo Canasteros González</span>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="hero.js"></script>
+</body>
+</html>
